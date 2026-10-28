@@ -7,8 +7,12 @@ reproduzir os resultados de um artigo científico que usa redes neurais.
 EMNLP 2014. https://arxiv.org/abs/1408.5882
 
 **Integrantes:**
-- Ivan Nerilo
-- _(completar)_
+- Alexandre Gustavo Weiss
+- Alexandre Luft Duarte
+- Douglas Gabriel Sierota
+- Ivan Lopes Nerilo
+- José Augusto Henn
+- Josué Henrique Moreira Borges
 
 ## O que o artigo faz
 

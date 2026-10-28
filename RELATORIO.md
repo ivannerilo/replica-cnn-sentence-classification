@@ -3,6 +3,9 @@
 > *Convolutional Neural Networks for Sentence Classification*, Yoon Kim, EMNLP 2014.
 > https://arxiv.org/abs/1408.5882
 
+**Equipe:** Alexandre Gustavo Weiss, Alexandre Luft Duarte, Douglas Gabriel Sierota,
+Ivan Lopes Nerilo, José Augusto Henn e Josué Henrique Moreira Borges.
+
 ## 1. Objetivo
 
 Reproduzir a Tabela 2 do artigo na base **MR** para as quatro variantes da CNN
