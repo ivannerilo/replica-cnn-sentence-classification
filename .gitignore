@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# dados e vetores grandes ficam fora do git (baixados pelos scripts)
+data/rt-polarity.*
+data/*.pkl
+*.bin
+*.bin.gz
+results/*.npy
