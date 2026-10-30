@@ -134,6 +134,7 @@ def main():
         def log(msg):
             print(msg, flush=True)
             log_file.write(msg + "\n")
+            log_file.flush()
 
         log(f"CNN-{args.variant} | dispositivo: {args.device} | épocas: {args.epochs}")
         train, test = make_fold(d["revs"], d["word_idx_map"], fold)
