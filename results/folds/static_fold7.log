@@ -1,0 +1,28 @@
+CNN-static | dispositivo: cpu | épocas: 25
+fold 7: treino 9555 | teste 1107
+  época  1 |  38.8s | treino 0.7911 | val 0.7747 | teste@melhor-val 0.7814
+  época  2 |  37.0s | treino 0.8075 | val 0.7695 | teste@melhor-val 0.7814
+  época  3 |  39.0s | treino 0.8829 | val 0.8126 | teste@melhor-val 0.7931
+  época  4 |  38.7s | treino 0.9195 | val 0.8232 | teste@melhor-val 0.8022
+  época  5 |  37.1s | treino 0.9118 | val 0.8011 | teste@melhor-val 0.8022
+  época  6 |  36.7s | treino 0.9644 | val 0.8116 | teste@melhor-val 0.8022
+  época  7 |  36.7s | treino 0.9809 | val 0.8137 | teste@melhor-val 0.8022
+  época  8 |  36.6s | treino 0.9853 | val 0.8084 | teste@melhor-val 0.8022
+  época  9 |  36.7s | treino 0.9920 | val 0.8179 | teste@melhor-val 0.8022
+  época 10 |  36.8s | treino 0.9946 | val 0.8158 | teste@melhor-val 0.8022
+  época 11 |  36.8s | treino 0.9913 | val 0.8042 | teste@melhor-val 0.8022
+  época 12 |  36.7s | treino 0.9980 | val 0.8116 | teste@melhor-val 0.8022
+  época 13 |  36.8s | treino 0.9979 | val 0.8158 | teste@melhor-val 0.8022
+  época 14 |  36.9s | treino 0.9993 | val 0.8189 | teste@melhor-val 0.8022
+  época 15 |  36.9s | treino 0.9998 | val 0.8211 | teste@melhor-val 0.8022
+  época 16 |  36.7s | treino 0.9998 | val 0.8211 | teste@melhor-val 0.8022
+  época 17 |  36.8s | treino 0.9998 | val 0.8211 | teste@melhor-val 0.8022
+  época 18 |  36.6s | treino 0.9999 | val 0.8168 | teste@melhor-val 0.8022
+  época 19 |  38.7s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8031
+  época 20 |  38.9s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8130
+  época 21 |  37.0s | treino 0.9999 | val 0.8200 | teste@melhor-val 0.8130
+  época 22 |  36.9s | treino 0.9999 | val 0.8200 | teste@melhor-val 0.8130
+  época 23 |  38.7s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8157
+  época 24 |  38.7s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8148
+  época 25 |  38.8s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8139
+fold 7: acurácia de teste 0.8139 (melhor época 25)

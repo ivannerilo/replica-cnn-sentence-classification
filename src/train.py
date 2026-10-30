@@ -118,37 +118,47 @@ def main():
     if embeddings is None:
         raise SystemExit("mr.pkl foi gerado sem word2vec; rode preprocess.py sem --no-w2v.")
 
+    # Cada fold é salvo assim que termina (results/folds/), então uma execução
+    # interrompida pode ser retomada: folds já salvos são pulados.
     out_dir = ROOT / "results"
-    out_dir.mkdir(exist_ok=True)
-    log_file = open(out_dir / f"{args.variant}.log", "w")
+    fold_dir = out_dir / "folds"
+    fold_dir.mkdir(parents=True, exist_ok=True)
 
-    def log(msg):
-        print(msg, flush=True)
-        log_file.write(msg + "\n")
-
-    log(f"CNN-{args.variant} | dispositivo: {args.device} | folds: {args.folds} "
-        f"| épocas: {args.epochs}")
-    results = []
     for fold in args.folds:
+        fold_file = fold_dir / f"{args.variant}_fold{fold}.json"
+        if fold_file.exists():
+            print(f"fold {fold} já concluído ({fold_file.name}); pulando")
+            continue
+        log_file = open(fold_dir / f"{args.variant}_fold{fold}.log", "w")
+
+        def log(msg):
+            print(msg, flush=True)
+            log_file.write(msg + "\n")
+
+        log(f"CNN-{args.variant} | dispositivo: {args.device} | épocas: {args.epochs}")
         train, test = make_fold(d["revs"], d["word_idx_map"], fold)
         log(f"fold {fold}: treino {len(train)} | teste {len(test)}")
         acc, best_epoch, history, model = train_fold(train, test, embeddings, args.variant,
                                                      args.epochs, args.device, log)
         log(f"fold {fold}: acurácia de teste {acc:.4f} (melhor época {best_epoch})")
-        results.append({"fold": fold, "test_acc": acc, "best_epoch": best_epoch,
-                        "history": history})
+        log_file.close()
+        tmp = fold_file.with_suffix(".tmp")
+        tmp.write_text(json.dumps({"fold": fold, "test_acc": acc, "best_epoch": best_epoch,
+                                   "history": history}, indent=2))
+        tmp.replace(fold_file)
+        if args.save_embeddings and fold == max(args.folds):
+            np.save(out_dir / f"emb_{args.variant}.npy",
+                    model.embed.weight.detach().cpu().numpy())
 
+    results = sorted((json.loads(p.read_text()) for p in fold_dir.glob(f"{args.variant}_fold*.json")),
+                     key=lambda r: r["fold"])
     accs = np.array([r["test_acc"] for r in results])
     summary = {"variant": args.variant, "epochs": args.epochs, "mean": float(accs.mean()),
                "std": float(accs.std()), "folds": results}
-    log(f"CNN-{args.variant}: média {accs.mean() * 100:.2f}% ± {accs.std() * 100:.2f} "
-        f"em {len(accs)} folds")
+    print(f"CNN-{args.variant}: média {accs.mean() * 100:.2f}% ± {accs.std() * 100:.2f} "
+          f"em {len(accs)} folds")
     with open(out_dir / f"{args.variant}.json", "w") as f:
         json.dump(summary, f, indent=2)
-
-    if args.save_embeddings:
-        np.save(out_dir / f"emb_{args.variant}.npy", model.embed.weight.detach().cpu().numpy())
-    log_file.close()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,28 @@
+CNN-nonstatic | dispositivo: cpu | épocas: 25
+fold 1: treino 9611 | teste 1051
+  época  1 |  50.9s | treino 0.7913 | val 0.7863 | teste@melhor-val 0.7659
+  época  2 |  50.6s | treino 0.8546 | val 0.7958 | teste@melhor-val 0.7983
+  época  3 |  50.9s | treino 0.9046 | val 0.8116 | teste@melhor-val 0.8059
+  época  4 |  50.1s | treino 0.9607 | val 0.8126 | teste@melhor-val 0.8278
+  época  5 |  50.4s | treino 0.9793 | val 0.8189 | teste@melhor-val 0.8268
+  época  6 |  48.7s | treino 0.9847 | val 0.8116 | teste@melhor-val 0.8268
+  época  7 |  50.5s | treino 0.9962 | val 0.8200 | teste@melhor-val 0.8240
+  época  8 |  50.5s | treino 0.9977 | val 0.8221 | teste@melhor-val 0.8240
+  época  9 |  48.8s | treino 0.9990 | val 0.8189 | teste@melhor-val 0.8240
+  época 10 |  48.7s | treino 0.9997 | val 0.8168 | teste@melhor-val 0.8240
+  época 11 |  50.2s | treino 0.9998 | val 0.8232 | teste@melhor-val 0.8202
+  época 12 |  48.5s | treino 0.9998 | val 0.8221 | teste@melhor-val 0.8202
+  época 13 |  51.0s | treino 0.9999 | val 0.8242 | teste@melhor-val 0.8154
+  época 14 |  48.5s | treino 0.9999 | val 0.8168 | teste@melhor-val 0.8154
+  época 15 |  49.3s | treino 0.9999 | val 0.8200 | teste@melhor-val 0.8154
+  época 16 |  48.9s | treino 0.9999 | val 0.8232 | teste@melhor-val 0.8154
+  época 17 |  48.2s | treino 1.0000 | val 0.8147 | teste@melhor-val 0.8154
+  época 18 |  48.5s | treino 1.0000 | val 0.8168 | teste@melhor-val 0.8154
+  época 19 |  49.5s | treino 1.0000 | val 0.8158 | teste@melhor-val 0.8154
+  época 20 |  49.8s | treino 1.0000 | val 0.8232 | teste@melhor-val 0.8154
+  época 21 |  48.9s | treino 1.0000 | val 0.8200 | teste@melhor-val 0.8154
+  época 22 |  49.1s | treino 1.0000 | val 0.8179 | teste@melhor-val 0.8154
+  época 23 |  49.7s | treino 1.0000 | val 0.8221 | teste@melhor-val 0.8154
+  época 24 |  49.4s | treino 1.0000 | val 0.8200 | teste@melhor-val 0.8154
+  época 25 |  48.4s | treino 1.0000 | val 0.8211 | teste@melhor-val 0.8154
+fold 1: acurácia de teste 0.8154 (melhor época 13)

@@ -68,6 +68,50 @@ def main():
           + "\n\n## Vizinhos mais próximos (análise da Tabela 3)\n\n" + neighbors_table() + "\n")
     (RESULTS / "comparacao.md").write_text(md)
     print(md)
+    plot_figures()
+
+
+def plot_figures():
+    """Acurácia por fold vs. artigo e curvas de treino/validação do fold 0."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except ImportError:
+        print("matplotlib não instalado; figuras não geradas")
+        return
+    runs = {v: json.loads((RESULTS / f"{v}.json").read_text())
+            for v in PAPER_MR if (RESULTS / f"{v}.json").exists()}
+    if not runs:
+        return
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    for i, (v, r) in enumerate(runs.items()):
+        accs = [f["test_acc"] * 100 for f in r["folds"]]
+        ax.scatter([i] * len(accs), accs, color="#3D6FD9", alpha=0.5, label="fold" if i == 0 else None)
+        ax.hlines(r["mean"] * 100, i - 0.25, i + 0.25, color="#121A2B", lw=2,
+                  label="média da réplica" if i == 0 else None)
+        ax.scatter(i, PAPER_MR[v], marker="D", color="#E07A2F", zorder=3,
+                   label="artigo" if i == 0 else None)
+    ax.set_xticks(range(len(runs)), [f"CNN-{v}" for v in runs])
+    ax.set_ylabel("acurácia de teste (%)")
+    ax.set_title("Base MR: acurácia por fold vs. artigo")
+    ax.legend(frameon=False)
+    fig.tight_layout()
+    fig.savefig(RESULTS / "acuracia_por_fold.png", dpi=150)
+
+    fig, axes = plt.subplots(1, len(runs), figsize=(4 * len(runs), 3.2), sharey=True)
+    for ax, (v, r) in zip(np.atleast_1d(axes), runs.items()):
+        h = r["folds"][0]["history"]
+        ax.plot([e["epoch"] for e in h], [e["train"] for e in h], color="#3D6FD9", label="treino")
+        ax.plot([e["epoch"] for e in h], [e["val"] for e in h], color="#E07A2F", label="validação")
+        ax.set_title(f"CNN-{v} (fold {r['folds'][0]['fold']})")
+        ax.set_xlabel("época")
+    np.atleast_1d(axes)[0].set_ylabel("acurácia")
+    np.atleast_1d(axes)[0].legend(frameon=False)
+    fig.tight_layout()
+    fig.savefig(RESULTS / "curvas_treino.png", dpi=150)
+    print("figuras salvas em results/")
 
 
 if __name__ == "__main__":

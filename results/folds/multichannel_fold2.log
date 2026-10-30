@@ -1,0 +1,28 @@
+CNN-multichannel | dispositivo: cpu | épocas: 25
+fold 2: treino 9606 | teste 1056
+  época  1 |  95.9s | treino 0.8116 | val 0.7663 | teste@melhor-val 0.7926
+  época  2 |  96.6s | treino 0.8592 | val 0.7832 | teste@melhor-val 0.7926
+  época  3 |  97.5s | treino 0.9011 | val 0.7842 | teste@melhor-val 0.8153
+  época  4 |  96.5s | treino 0.9466 | val 0.8116 | teste@melhor-val 0.8163
+  época  5 |  97.6s | treino 0.9646 | val 0.8147 | teste@melhor-val 0.8021
+  época  6 |  93.9s | treino 0.9860 | val 0.8063 | teste@melhor-val 0.8021
+  época  7 |  93.5s | treino 0.9843 | val 0.8105 | teste@melhor-val 0.8021
+  época  8 |  93.7s | treino 0.9968 | val 0.7979 | teste@melhor-val 0.8021
+  época  9 |  97.9s | treino 0.9986 | val 0.8147 | teste@melhor-val 0.8229
+  época 10 |  98.4s | treino 0.9987 | val 0.8147 | teste@melhor-val 0.8182
+  época 11 |  94.5s | treino 0.9998 | val 0.8084 | teste@melhor-val 0.8182
+  época 12 |  97.6s | treino 0.9999 | val 0.8189 | teste@melhor-val 0.8201
+  época 13 |  94.0s | treino 1.0000 | val 0.8168 | teste@melhor-val 0.8201
+  época 14 |  93.1s | treino 1.0000 | val 0.8116 | teste@melhor-val 0.8201
+  época 15 |  94.3s | treino 1.0000 | val 0.8147 | teste@melhor-val 0.8201
+  época 16 |  96.6s | treino 1.0000 | val 0.8158 | teste@melhor-val 0.8201
+  época 17 |  93.6s | treino 1.0000 | val 0.8126 | teste@melhor-val 0.8201
+  época 18 |  94.2s | treino 1.0000 | val 0.8179 | teste@melhor-val 0.8201
+  época 19 |  93.6s | treino 1.0000 | val 0.8137 | teste@melhor-val 0.8201
+  época 20 |  93.0s | treino 1.0000 | val 0.8147 | teste@melhor-val 0.8201
+  época 21 |  92.5s | treino 1.0000 | val 0.8137 | teste@melhor-val 0.8201
+  época 22 |  92.8s | treino 1.0000 | val 0.8137 | teste@melhor-val 0.8201
+  época 23 |  91.7s | treino 1.0000 | val 0.8084 | teste@melhor-val 0.8201
+  época 24 |  93.0s | treino 1.0000 | val 0.8137 | teste@melhor-val 0.8201
+  época 25 |  92.3s | treino 1.0000 | val 0.8105 | teste@melhor-val 0.8201
+fold 2: acurácia de teste 0.8201 (melhor época 12)

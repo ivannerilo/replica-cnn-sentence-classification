@@ -1,0 +1,28 @@
+CNN-multichannel | dispositivo: cpu | épocas: 25
+fold 1: treino 9611 | teste 1051
+  época  1 |  97.2s | treino 0.8149 | val 0.8042 | teste@melhor-val 0.7793
+  época  2 |  99.8s | treino 0.8587 | val 0.8116 | teste@melhor-val 0.8078
+  época  3 |  95.0s | treino 0.8930 | val 0.8063 | teste@melhor-val 0.8078
+  época  4 |  98.6s | treino 0.9440 | val 0.8189 | teste@melhor-val 0.8116
+  época  5 |  94.7s | treino 0.9360 | val 0.7905 | teste@melhor-val 0.8116
+  época  6 |  94.7s | treino 0.9676 | val 0.7989 | teste@melhor-val 0.8116
+  época  7 |  94.4s | treino 0.9900 | val 0.8095 | teste@melhor-val 0.8116
+  época  8 |  98.3s | treino 0.9974 | val 0.8189 | teste@melhor-val 0.8135
+  época  9 |  99.5s | treino 0.9986 | val 0.8189 | teste@melhor-val 0.8107
+  época 10 |  95.4s | treino 0.9995 | val 0.8126 | teste@melhor-val 0.8107
+  época 11 |  98.4s | treino 0.9998 | val 0.8189 | teste@melhor-val 0.8183
+  época 12 |  98.4s | treino 0.9999 | val 0.8211 | teste@melhor-val 0.8135
+  época 13 |  98.9s | treino 0.9998 | val 0.8211 | teste@melhor-val 0.8164
+  época 14 |  94.4s | treino 0.9999 | val 0.8179 | teste@melhor-val 0.8164
+  época 15 |  99.6s | treino 1.0000 | val 0.8253 | teste@melhor-val 0.8173
+  época 16 |  95.2s | treino 1.0000 | val 0.8179 | teste@melhor-val 0.8173
+  época 17 |  95.4s | treino 1.0000 | val 0.8242 | teste@melhor-val 0.8173
+  época 18 |  95.4s | treino 1.0000 | val 0.8232 | teste@melhor-val 0.8173
+  época 19 |  99.1s | treino 1.0000 | val 0.8263 | teste@melhor-val 0.8135
+  época 20 |  95.9s | treino 1.0000 | val 0.8179 | teste@melhor-val 0.8135
+  época 21 |  99.7s | treino 1.0000 | val 0.8274 | teste@melhor-val 0.8126
+  época 22 |  96.7s | treino 1.0000 | val 0.8221 | teste@melhor-val 0.8126
+  época 23 |  95.0s | treino 1.0000 | val 0.8200 | teste@melhor-val 0.8126
+  época 24 |  96.5s | treino 1.0000 | val 0.8137 | teste@melhor-val 0.8126
+  época 25 |  96.5s | treino 1.0000 | val 0.8221 | teste@melhor-val 0.8126
+fold 1: acurácia de teste 0.8126 (melhor época 21)
